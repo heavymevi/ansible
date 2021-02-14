@@ -1,0 +1,21 @@
+---
+- hosts: app_server
+  become: true
+  tasks:
+      - name: install cli  
+        apt:
+          deb: "{{ cli_src }}"
+
+      - name: install Container
+        apt:
+         deb: "{{ container_src }}"
+
+      - name: install ce 
+        apt:
+         deb: "{{ ce_src}}"
+
+      - name: install rootles
+        apt:
+         deb: "{{ rootles_src}}"
+ 
+    

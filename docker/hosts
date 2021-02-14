@@ -1,0 +1,9 @@
+[app_server]
+
+
+[all:vars]
+
+container_src='/install/docker/file/containerd.io_1.4.3-1_amd64.deb'
+ce_src='/install/docker/file/docker-ce_20.10.3~3-0~ubuntu-bionic_amd64.deb'
+cli_src='/install/docker/file/docker-ce-cli_20.10.3~3-0~ubuntu-bionic_amd64.deb'
+rootles_src='/install/docker/file/docker-ce-rootless-extras_20.10.3~3-0~ubuntu-bionic_amd64.deb'
