@@ -1,0 +1,21 @@
+---
+- hosts: app_server
+  gather_facts: false
+  become: true
+  tasks:
+
+  - name: Making a list of files
+    shell: "ls /home/<user>/docker-compose/"
+    register: command_result
+
+  - name: unlock folder before exec process
+    command: "apt clean"
+    command: "apt clean cache"
+
+  - name: installing docker-compose
+  # become: yes
+    shell: "dpkg -i /home/<user>/docker-compose/{{item}}"
+    with_items:
+     - "{{ command_result.stdout_lines }}"
+~
+
